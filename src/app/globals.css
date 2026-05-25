@@ -49,34 +49,48 @@ html, body {
 
 /* ── Responsive section padding ── */
 .section-pad {
-  padding-top: 160px;
-  padding-bottom: 160px;
+  padding-top: 120px;
+  padding-bottom: 120px;
 }
 @media (max-width: 767px) {
   .section-pad {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 64px;
+    padding-bottom: 64px;
   }
 }
 
 /* Stats inner card */
 .stats-inner {
-  padding: 64px 48px;
+  padding: 56px 48px;
 }
 @media (max-width: 767px) {
   .stats-inner {
-    padding: 40px 20px;
+    padding: 36px 20px;
   }
 }
 
 /* CTA inner padding */
 .cta-inner {
-  padding: 180px 24px;
+  padding: 140px 24px;
 }
 @media (max-width: 767px) {
   .cta-inner {
-    padding: 100px 20px;
+    padding: 80px 20px;
   }
+}
+
+/* Premium card */
+.card-premium {
+  background: rgba(255,255,255,0.038);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.06);
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+.card-premium:hover {
+  background: rgba(255,255,255,0.055);
+  border-color: rgba(56,189,248,0.22);
+  box-shadow: 0 12px 48px rgba(0,0,0,0.45), 0 0 0 1px rgba(56,189,248,0.08), inset 0 1px 0 rgba(255,255,255,0.09);
 }
 
 /* Section divider */

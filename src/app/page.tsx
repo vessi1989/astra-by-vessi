@@ -130,14 +130,14 @@ function Navbar() {
             <a
               key={item}
               href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
-              className="text-[13px] text-[#b4bcd0] hover:text-white transition-colors duration-150 tracking-wide"
+              className="text-[14px] text-[#b4bcd0] hover:text-white transition-colors duration-150 tracking-wide"
             >
               {item}
             </a>
           ))}
         </div>
 
-        <ShinyButton className="hidden md:block text-[11px] px-5 py-2.5">
+        <ShinyButton className="hidden md:block text-[12px] px-5 py-2.5">
           Free Audit
         </ShinyButton>
 
@@ -222,7 +222,7 @@ function ServicesSection() {
     <section id="services" className="relative section-pad">
       <div className="wrap">
         {/* heading */}
-        <FadeIn className="text-center mb-14 md:mb-20">
+        <FadeIn className="text-center mb-12 md:mb-16">
           <Label>What We Do</Label>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#f7f8f8] leading-[1.08]" style={{ letterSpacing: '-0.022em' }}>
             AI That Sells While
@@ -241,19 +241,19 @@ function ServicesSection() {
             const Icon = s.icon;
             return (
               <FadeIn key={s.title} delay={i * 0.08}>
-                <div className="group h-full rounded-2xl border border-white/[0.08] bg-[rgba(255,255,255,0.03)] p-8 hover:border-sky-500/25 hover:bg-[#0f0f12] transition-all duration-300">
+                <div className="card-premium group h-full p-9">
                   {/* icon */}
-                  <div className="w-10 h-10 rounded-xl border border-sky-500/20 bg-sky-500/[0.08] flex items-center justify-center mb-5">
+                  <div className="w-11 h-11 rounded-xl border border-sky-500/20 bg-sky-500/[0.08] flex items-center justify-center mb-6" style={{ boxShadow: '0 0 20px rgba(56,189,248,0.08)' }}>
                     <Icon className="w-5 h-5 text-sky-400" />
                   </div>
-                  <h3 className="text-[15px] font-bold text-white mb-2.5">{s.title}</h3>
-                  <p className="text-[13px] text-[#b4bcd0] leading-relaxed mb-5">{s.desc}</p>
+                  <h3 className="text-[16px] font-bold text-white mb-3">{s.title}</h3>
+                  <p className="text-[14px] text-[#b4bcd0] leading-relaxed mb-6">{s.desc}</p>
                   {/* tags */}
                   <div className="flex flex-wrap gap-1.5">
                     {s.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-[11px] px-2.5 py-0.5 rounded-full border border-white/[0.08] text-[rgba(180,188,208,0.55)]"
+                        className="text-[12px] px-3 py-1 rounded-full border border-white/[0.08] text-[rgba(180,188,208,0.6)]"
                       >
                         {tag}
                       </span>
@@ -298,7 +298,7 @@ function StatsSection() {
                     prefix={stat.prefix ?? ""}
                   />
                 </div>
-                <div className="text-[12px] text-[rgba(180,188,208,0.55)] tracking-wide">{stat.label}</div>
+                <div className="text-[13px] text-[rgba(180,188,208,0.65)] tracking-wide">{stat.label}</div>
               </FadeIn>
             );
           })}
@@ -339,16 +339,16 @@ const PROCESS_STEPS = [
 
 function HowItWorksSection() {
   return (
-    <section id="how-it-works" className="relative section-pad">
+    <section id="how-it-works" className="relative section-pad" style={{ background: 'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(56,189,248,0.04) 0%, transparent 100%)' }}>
       <div className="wrap">
-        <FadeIn className="text-center mb-12 md:mb-20">
+        <FadeIn className="text-center mb-10 md:mb-16">
           <Label>The Process</Label>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#f7f8f8] leading-[1.08]" style={{ letterSpacing: '-0.022em' }}>
             From Zero to Pipeline
             <br />
             <span className="shimmer-text">in 21 Days</span>
           </h2>
-          <p className="mt-5 text-[14px]" style={{ maxWidth: '420px', margin: '20px auto 0', color: '#b4bcd0' }}>
+          <p className="mt-5 text-[15px]" style={{ maxWidth: '420px', margin: '20px auto 0', color: '#b4bcd0' }}>
             Click any node to explore each phase of your AI-powered growth journey.
           </p>
         </FadeIn>
@@ -381,9 +381,9 @@ const TESTIMONIALS = [
 
 function TestimonialsSection() {
   return (
-    <section id="results" className="relative section-pad">
+    <section id="results" className="relative section-pad" style={{ background: 'radial-gradient(ellipse 70% 40% at 50% 100%, rgba(56,189,248,0.035) 0%, transparent 100%)' }}>
       <div className="wrap">
-        <FadeIn className="text-center mb-14 md:mb-20">
+        <FadeIn className="text-center mb-10 md:mb-14">
           <Label>Client Results</Label>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#f7f8f8] leading-[1.08]" style={{ letterSpacing: '-0.022em' }}>
             <span className="shimmer-text">Real Numbers.</span> Real Growth.
@@ -449,7 +449,7 @@ function TechSection() {
   return (
     <section className="relative section-pad">
       <div className="wrap">
-        <FadeIn className="text-center mb-10 md:mb-16">
+        <FadeIn className="text-center mb-10 md:mb-14">
           <Label>Powered By</Label>
           <h2 className="text-4xl md:text-5xl font-bold leading-tight" style={{ letterSpacing: '-0.022em' }}>
             <span className="text-[#f7f8f8]">Best-in-Class </span>
@@ -466,10 +466,11 @@ function TechSection() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.04 }}
-                className="rounded-xl border border-white/[0.1] bg-[rgba(255,255,255,0.03)] px-3 py-4 text-center hover:border-sky-500/20 hover:bg-[#0f0f14] transition-all duration-200"
+                className="rounded-2xl border border-white/[0.08] bg-[rgba(255,255,255,0.03)] px-3 py-5 text-center hover:border-sky-500/20 hover:bg-[rgba(255,255,255,0.055)] transition-all duration-200"
+                style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.05)' }}
               >
-                <div className="text-[12px] font-semibold text-white/70 mb-1">{tech.name}</div>
-                <div className="text-[10px] text-white/25">{tech.category}</div>
+                <div className="text-[13px] font-semibold text-white/75 mb-1">{tech.name}</div>
+                <div className="text-[11px] text-white/30">{tech.category}</div>
               </motion.div>
             ))}
           </div>
@@ -528,7 +529,7 @@ function PricingSection() {
   return (
     <section id="pricing" className="relative section-pad">
       <div className="wrap">
-        <FadeIn className="text-center mb-14 md:mb-20">
+        <FadeIn className="text-center mb-12 md:mb-16">
           <Label>Investment</Label>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#f7f8f8] leading-[1.08]" style={{ letterSpacing: '-0.022em' }}>
             Plans That Scale
@@ -542,11 +543,17 @@ function PricingSection() {
           {PRICING.map((plan, i) => (
             <FadeIn key={plan.name} delay={i * 0.08} className="flex">
               <div
-                className={`relative w-full rounded-2xl p-8 flex flex-col transition-all duration-300 ${
+                className={`relative w-full rounded-[20px] p-10 flex flex-col transition-all duration-300 ${
                   plan.highlight
-                    ? "border border-sky-500/30 bg-[#060914] shadow-[0_0_60px_rgba(56,189,248,0.1)]"
-                    : "border border-white/[0.1] bg-[rgba(255,255,255,0.03)]"
+                    ? "border border-sky-500/35 bg-[#060914]"
+                    : "border border-white/[0.08] bg-[rgba(255,255,255,0.03)]"
                 }`}
+                style={plan.highlight ? {
+                  boxShadow: '0 0 0 1px rgba(56,189,248,0.12), 0 20px 60px rgba(0,0,0,0.6), 0 0 80px rgba(56,189,248,0.07), inset 0 1px 0 rgba(56,189,248,0.15)',
+                  background: 'linear-gradient(160deg, rgba(56,189,248,0.07) 0%, rgba(6,9,20,1) 40%)',
+                } : {
+                  boxShadow: '0 8px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.05)',
+                }}
               >
                 {/* Popular badge */}
                 {plan.highlight && (
@@ -559,7 +566,7 @@ function PricingSection() {
 
                 {/* Plan name */}
                 <div className="mb-6">
-                  <h3 className="text-[13px] font-semibold text-white/50 uppercase tracking-widest mb-3">
+                  <h3 className="text-[13px] font-semibold text-white/55 uppercase tracking-widest mb-3">
                     {plan.name}
                   </h3>
                   <div className="flex items-baseline gap-1 mb-3">
@@ -573,15 +580,15 @@ function PricingSection() {
                       <span className="text-white/30 text-sm">/mo</span>
                     )}
                   </div>
-                  <p className="text-[13px] text-[rgba(180,188,208,0.55)] leading-relaxed">{plan.desc}</p>
+                  <p className="text-[14px] text-[rgba(180,188,208,0.6)] leading-relaxed">{plan.desc}</p>
                 </div>
 
                 {/* Features */}
-                <ul className="space-y-3.5 mb-8 flex-1">
+                <ul className="space-y-4 mb-9 flex-1">
                   {plan.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2.5">
+                    <li key={f} className="flex items-start gap-3">
                       <CheckCircle className="w-4 h-4 text-sky-400 flex-shrink-0 mt-0.5" />
-                      <span className="text-[13px] text-white/50">{f}</span>
+                      <span className="text-[14px] text-white/55">{f}</span>
                     </li>
                   ))}
                 </ul>
@@ -623,7 +630,7 @@ function CTASection() {
             <br />
             <span className="shimmer-text">Using AI.</span>
           </h2>
-          <p className="mt-6 text-[15px] leading-relaxed text-center" style={{ maxWidth: '560px', margin: '24px auto 0', color: '#b4bcd0' }}>
+          <p className="mt-6 text-[16px] leading-relaxed text-center" style={{ maxWidth: '560px', margin: '24px auto 0', color: '#b4bcd0' }}>
             Every day without an AI sales system is pipeline left on the table. Book your
             free audit and see exactly how ASTRA can 10× your revenue in 90 days.
           </p>
@@ -676,29 +683,29 @@ function Footer() {
               </div>
               <span className="text-[17px] font-black tracking-wider text-white">ASTRA</span>
             </div>
-            <p className="text-[13px] text-white/30 leading-relaxed" style={{ maxWidth: '280px' }}>
+            <p className="text-[14px] text-white/35 leading-relaxed" style={{ maxWidth: '280px' }}>
               AI-powered B2B sales agency. We build autonomous lead generation and outreach
               systems that fill your pipeline while you close.
             </p>
           </div>
 
           <div>
-            <h4 className="text-[11px] text-white/30 uppercase tracking-widest font-semibold mb-4">Services</h4>
+            <h4 className="text-[12px] text-white/35 uppercase tracking-widest font-semibold mb-4">Services</h4>
             <ul className="space-y-2.5">
               {["AI Lead Generation", "Outreach Automation", "Conversational AI", "Sales Analytics", "Pipeline Scaling"].map((s) => (
                 <li key={s}>
-                  <a href="#" className="text-[13px] text-white/25 hover:text-white/50 transition-colors">{s}</a>
+                  <a href="#" className="text-[14px] text-white/30 hover:text-white/55 transition-colors">{s}</a>
                 </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h4 className="text-[11px] text-white/30 uppercase tracking-widest font-semibold mb-4">Company</h4>
+            <h4 className="text-[12px] text-white/35 uppercase tracking-widest font-semibold mb-4">Company</h4>
             <ul className="space-y-2.5">
               {["About", "Case Studies", "Blog", "Careers", "Contact"].map((s) => (
                 <li key={s}>
-                  <a href="#" className="text-[13px] text-white/25 hover:text-white/50 transition-colors">{s}</a>
+                  <a href="#" className="text-[14px] text-white/30 hover:text-white/55 transition-colors">{s}</a>
                 </li>
               ))}
             </ul>
@@ -706,10 +713,10 @@ function Footer() {
         </div>
 
         <div className="border-t border-white/[0.05] pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-[12px] text-white/20">© 2025 ASTRA AI Agency. All rights reserved.</p>
+          <p className="text-[13px] text-white/25">© 2025 ASTRA AI Agency. All rights reserved.</p>
           <div className="flex gap-6">
             {["Privacy", "Terms", "Cookies"].map((s) => (
-              <a key={s} href="#" className="text-[12px] text-white/20 hover:text-white/40 transition-colors">{s}</a>
+              <a key={s} href="#" className="text-[13px] text-white/25 hover:text-white/45 transition-colors">{s}</a>
             ))}
           </div>
         </div>

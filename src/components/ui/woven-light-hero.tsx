@@ -27,7 +27,15 @@ export const WovenLightHero = () => {
         className="absolute inset-0 z-[1] pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(0,0,0,0.75) 0%, transparent 100%)",
+            "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(0,0,0,0.82) 0%, transparent 100%)",
+        }}
+      />
+      {/* Subtle cyan core glow — premium depth */}
+      <div
+        className="absolute inset-0 z-[1] pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 55% 45% at 50% 52%, rgba(56,189,248,0.055) 0%, transparent 70%)",
         }}
       />
 
@@ -40,7 +48,7 @@ export const WovenLightHero = () => {
           transition={{ delay: 0.3, duration: 0.7 }}
           className="mb-8 inline-flex items-center gap-2"
         >
-          <span className="text-[11px] uppercase tracking-[0.28em] text-sky-400/80 font-semibold border border-sky-500/20 px-4 py-1.5 rounded-full bg-sky-500/5 backdrop-blur-sm">
+          <span className="text-[12px] uppercase tracking-[0.28em] text-sky-400/90 font-semibold border border-sky-500/25 px-4 py-1.5 rounded-full bg-sky-500/8 backdrop-blur-sm">
             AI-Powered B2B Sales Agency
           </span>
         </motion.div>
@@ -68,10 +76,10 @@ export const WovenLightHero = () => {
           custom={7}
           initial={{ opacity: 0, y: 24 }}
           animate={textControls}
-          className="mt-5 text-[clamp(16px,2.2vw,22px)] font-light text-white/50 tracking-wide"
+          className="mt-6 text-[clamp(19px,2.6vw,28px)] font-light text-white/65 tracking-wide"
         >
           We Automate Your Growth.&nbsp;
-          <span className="text-sky-400/90 font-normal">You Close More Deals.</span>
+          <span className="text-sky-400 font-normal">You Close More Deals.</span>
         </motion.p>
 
         {/* Sub-copy */}
@@ -79,7 +87,7 @@ export const WovenLightHero = () => {
           custom={9}
           initial={{ opacity: 0, y: 16 }}
           animate={textControls}
-          className="mt-4 max-w-xl mx-auto text-[13px] text-white/30 leading-relaxed"
+          className="mt-5 max-w-xl mx-auto text-[15px] text-white/40 leading-relaxed"
         >
           AI lead generation · intelligent outreach · conversational sales agents · pipeline acceleration
         </motion.p>
@@ -94,11 +102,11 @@ export const WovenLightHero = () => {
           <div className="relative inline-flex">
             <div className="absolute -inset-[14px] rounded-full bg-sky-500/25 blur-2xl pointer-events-none" />
             <div className="absolute -inset-[6px] rounded-full bg-sky-400/15 blur-md pointer-events-none" />
-            <button className="relative px-10 py-4 rounded-full text-[13px] font-bold text-white uppercase tracking-widest bg-sky-500 hover:bg-sky-400 transition-all duration-200 shadow-[0_0_32px_rgba(56,189,248,0.55)] hover:shadow-[0_0_52px_rgba(56,189,248,0.8)]">
+            <button className="relative px-11 py-4 rounded-full text-[14px] font-bold text-white uppercase tracking-widest bg-sky-500 hover:bg-sky-400 transition-all duration-200 shadow-[0_0_40px_rgba(56,189,248,0.65)] hover:shadow-[0_0_60px_rgba(56,189,248,0.9)]">
               Book a Strategy Call
             </button>
           </div>
-          <button className="px-8 py-3.5 rounded-full text-[13px] font-semibold text-white/50 uppercase tracking-widest border border-white/10 hover:border-white/25 hover:text-white/80 transition-all duration-200 backdrop-blur-sm">
+          <button className="px-9 py-4 rounded-full text-[13px] font-semibold text-white/60 uppercase tracking-widest border border-white/12 hover:border-white/30 hover:text-white/85 transition-all duration-200 backdrop-blur-sm">
             How It Works →
           </button>
         </motion.div>
