@@ -103,7 +103,7 @@ export const WovenLightHero = () => {
             <div className="absolute -inset-[14px] rounded-full bg-sky-500/25 blur-2xl pointer-events-none" />
             <div className="absolute -inset-[6px] rounded-full bg-sky-400/15 blur-md pointer-events-none" />
             <button
-              onClick={() => window.open("https://www.instagram.com/vessi_minev/", "_blank")}
+              onClick={() => window.open("https://www.instagram.com/vessi_mi/", "_blank")}
               className="relative px-11 py-4 rounded-full text-[14px] font-bold text-white uppercase tracking-widest bg-sky-500 hover:bg-sky-400 transition-all duration-200 shadow-[0_0_40px_rgba(56,189,248,0.65)] hover:shadow-[0_0_60px_rgba(56,189,248,0.9)] cursor-pointer"
             >
               Book a Strategy Call

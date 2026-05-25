@@ -14,7 +14,7 @@ import ShaderBackground      from "@/components/ui/shader-background";
 import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
 
 /* ── Contact ─────────────────────────────────────────────────────────────── */
-const CONTACT = "https://www.instagram.com/vessi_minev/";
+const CONTACT = "https://www.instagram.com/vessi_mi/";
 const openContact = () => window.open(CONTACT, "_blank");
 
 /* ── helpers ────────────────────────────────────────────────────────────── */
