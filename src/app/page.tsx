@@ -14,7 +14,8 @@ import ShaderBackground      from "@/components/ui/shader-background";
 import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
 
 /* ── Contact ─────────────────────────────────────────────────────────────── */
-const CONTACT = "mailto:hello@astraai.com"; // ← replace with real email / Calendly link
+const CONTACT = "https://www.instagram.com/vessi_minev/";
+const openContact = () => window.open(CONTACT, "_blank");
 
 /* ── helpers ────────────────────────────────────────────────────────────── */
 
@@ -140,11 +141,9 @@ function Navbar() {
           ))}
         </div>
 
-        <a href={CONTACT}>
-          <ShinyButton className="hidden md:block text-[12px] px-5 py-2.5">
-            Free Audit
-          </ShinyButton>
-        </a>
+        <ShinyButton onClick={openContact} className="hidden md:block text-[12px] px-5 py-2.5 cursor-pointer">
+          Free Audit
+        </ShinyButton>
 
         {/* Hamburger — mobile only */}
         <button
@@ -173,9 +172,7 @@ function Navbar() {
               </a>
             ))}
             <div className="pt-4">
-              <a href={CONTACT}>
-                <ShinyButton className="text-[12px] px-5 py-3 w-full">Free Audit</ShinyButton>
-              </a>
+              <ShinyButton onClick={openContact} className="text-[12px] px-5 py-3 w-full cursor-pointer">Free Audit</ShinyButton>
             </div>
           </div>
         </div>
@@ -601,17 +598,16 @@ function PricingSection() {
                 </ul>
 
                 {/* CTA */}
-                <a href={CONTACT} className="block">
-                  <button
-                    className={`w-full py-3 rounded-xl text-[13px] font-semibold tracking-wide transition-all duration-200 ${
-                      plan.highlight
-                        ? "bg-sky-500 hover:bg-sky-400 text-white shadow-[0_0_20px_rgba(56,189,248,0.3)] hover:shadow-[0_0_32px_rgba(56,189,248,0.5)]"
-                        : "border border-white/[0.08] text-white/40 hover:text-white/70 hover:border-white/15"
-                    }`}
-                  >
-                    {plan.price === "Custom" ? "Contact Sales" : "Get Started"}
-                  </button>
-                </a>
+                <button
+                  onClick={openContact}
+                  className={`w-full py-3 rounded-xl text-[13px] font-semibold tracking-wide transition-all duration-200 cursor-pointer ${
+                    plan.highlight
+                      ? "bg-sky-500 hover:bg-sky-400 text-white shadow-[0_0_20px_rgba(56,189,248,0.3)] hover:shadow-[0_0_32px_rgba(56,189,248,0.5)]"
+                      : "border border-white/[0.08] text-white/40 hover:text-white/70 hover:border-white/15"
+                  }`}
+                >
+                  {plan.price === "Custom" ? "Contact Sales" : "Get Started"}
+                </button>
               </div>
             </FadeIn>
           ))}
@@ -645,19 +641,17 @@ function CTASection() {
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href={CONTACT} className="relative inline-flex">
+            <div className="relative inline-flex">
               <div className="absolute -inset-[16px] rounded-full bg-sky-500/25 blur-2xl pointer-events-none" />
               <div className="absolute -inset-[6px] rounded-full bg-sky-400/15 blur-md pointer-events-none" />
-              <button className="group relative flex items-center gap-2.5 px-10 py-4 rounded-full text-[13px] font-bold text-white uppercase tracking-widest bg-sky-500 hover:bg-sky-400 transition-all duration-200 shadow-[0_0_36px_rgba(56,189,248,0.55)] hover:shadow-[0_0_60px_rgba(56,189,248,0.8)]">
+              <button onClick={openContact} className="group relative flex items-center gap-2.5 px-10 py-4 rounded-full text-[13px] font-bold text-white uppercase tracking-widest bg-sky-500 hover:bg-sky-400 transition-all duration-200 shadow-[0_0_36px_rgba(56,189,248,0.55)] hover:shadow-[0_0_60px_rgba(56,189,248,0.8)] cursor-pointer">
                 Book Your Free AI Audit
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </button>
-            </a>
-            <a href="#results">
-              <button className="px-8 py-4 rounded-full text-[13px] font-semibold text-white/40 uppercase tracking-widest border border-white/[0.08] hover:border-white/20 hover:text-[#b4bcd0] transition-all duration-200">
-                See Case Studies
-              </button>
-            </a>
+            </div>
+            <button onClick={() => document.querySelector("#results")?.scrollIntoView({ behavior: "smooth" })} className="px-8 py-4 rounded-full text-[13px] font-semibold text-white/40 uppercase tracking-widest border border-white/[0.08] hover:border-white/20 hover:text-[#b4bcd0] transition-all duration-200 cursor-pointer">
+              See Case Studies
+            </button>
           </div>
 
           <div className="mt-12 flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-8 text-[12px] text-white/25">

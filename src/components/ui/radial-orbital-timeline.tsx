@@ -25,9 +25,17 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
   const [autoRotate, setAutoRotate] = useState<boolean>(true);
   const [pulseEffect, setPulseEffect] = useState<Record<number, boolean>>({});
   const [activeNodeId, setActiveNodeId] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const orbitRef = useRef<HTMLDivElement>(null);
   const nodeRefs = useRef<Record<number, HTMLDivElement | null>>({});
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   const handleContainerClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === containerRef.current || e.target === orbitRef.current) {
@@ -65,10 +73,10 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
   };
 
   useEffect(() => {
-    if (!autoRotate) return;
+    if (!autoRotate || isMobile) return;
     let rafId: number;
     let lastTime: number | null = null;
-    const FRAME_MS = 1000 / 30; // cap at 30fps to stay smooth on mobile
+    const FRAME_MS = 1000 / 30;
 
     const tick = (now: number) => {
       rafId = requestAnimationFrame(tick);
@@ -80,7 +88,7 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
 
     rafId = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(rafId);
-  }, [autoRotate]);
+  }, [autoRotate, isMobile]);
 
   const centerViewOnNode = (nodeId: number) => {
     const nodeIndex = timelineData.findIndex((item) => item.id === nodeId);

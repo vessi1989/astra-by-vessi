@@ -18,7 +18,7 @@ export const WovenLightHero = () => {
   }, [textControls, buttonControls]);
 
   return (
-    <div className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-black">
+    <div className="relative flex h-[100svh] w-full flex-col items-center justify-center overflow-hidden bg-black">
       {/* Three.js canvas — sits behind everything */}
       <WovenCanvas />
 
@@ -99,18 +99,22 @@ export const WovenLightHero = () => {
           className="mt-10 flex flex-col sm:flex-row gap-3 justify-center items-center pointer-events-auto"
         >
           {/* Primary CTA — extended glow halo */}
-          <a href="mailto:hello@astraai.com" className="relative inline-flex">
+          <div className="relative inline-flex">
             <div className="absolute -inset-[14px] rounded-full bg-sky-500/25 blur-2xl pointer-events-none" />
             <div className="absolute -inset-[6px] rounded-full bg-sky-400/15 blur-md pointer-events-none" />
-            <button className="relative px-11 py-4 rounded-full text-[14px] font-bold text-white uppercase tracking-widest bg-sky-500 hover:bg-sky-400 transition-all duration-200 shadow-[0_0_40px_rgba(56,189,248,0.65)] hover:shadow-[0_0_60px_rgba(56,189,248,0.9)]">
+            <button
+              onClick={() => window.open("https://www.instagram.com/vessi_minev/", "_blank")}
+              className="relative px-11 py-4 rounded-full text-[14px] font-bold text-white uppercase tracking-widest bg-sky-500 hover:bg-sky-400 transition-all duration-200 shadow-[0_0_40px_rgba(56,189,248,0.65)] hover:shadow-[0_0_60px_rgba(56,189,248,0.9)] cursor-pointer"
+            >
               Book a Strategy Call
             </button>
-          </a>
-          <a href="#how-it-works">
-            <button className="px-9 py-4 rounded-full text-[13px] font-semibold text-white/60 uppercase tracking-widest border border-white/12 hover:border-white/30 hover:text-white/85 transition-all duration-200 backdrop-blur-sm">
-              How It Works →
-            </button>
-          </a>
+          </div>
+          <button
+            onClick={() => document.querySelector("#how-it-works")?.scrollIntoView({ behavior: "smooth" })}
+            className="px-9 py-4 rounded-full text-[13px] font-semibold text-white/60 uppercase tracking-widest border border-white/12 hover:border-white/30 hover:text-white/85 transition-all duration-200 backdrop-blur-sm cursor-pointer"
+          >
+            How It Works →
+          </button>
         </motion.div>
       </div>
 
