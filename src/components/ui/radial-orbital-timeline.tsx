@@ -66,10 +66,20 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
 
   useEffect(() => {
     if (!autoRotate) return;
-    const timer = setInterval(() => {
-      setRotationAngle((prev) => (prev + 0.3) % 360);
-    }, 50);
-    return () => clearInterval(timer);
+    let rafId: number;
+    let lastTime: number | null = null;
+    const FRAME_MS = 1000 / 30; // cap at 30fps to stay smooth on mobile
+
+    const tick = (now: number) => {
+      rafId = requestAnimationFrame(tick);
+      if (lastTime !== null && now - lastTime < FRAME_MS) return;
+      const delta = lastTime !== null ? Math.min(now - lastTime, 100) : FRAME_MS;
+      lastTime = now;
+      setRotationAngle((prev) => (prev + delta * 0.006) % 360);
+    };
+
+    rafId = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafId);
   }, [autoRotate]);
 
   const centerViewOnNode = (nodeId: number) => {
@@ -83,8 +93,8 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
     const angle = ((index / total) * 360 + rotationAngle) % 360;
     const radius = 180;
     const radian = (angle * Math.PI) / 180;
-    const x = radius * Math.cos(radian);
-    const y = radius * Math.sin(radian);
+    const x = Math.round(radius * Math.cos(radian) * 100) / 100;
+    const y = Math.round(radius * Math.sin(radian) * 100) / 100;
     const zIndex = Math.round(100 + 50 * Math.cos(radian));
     const opacity = Math.max(0.3, Math.min(1, 0.3 + 0.7 * ((1 + Math.sin(radian)) / 2)));
     return { x, y, zIndex, opacity };
