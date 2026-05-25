@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000212;
+  --foreground: #f7f8f8;
+  --accent: #38bdf8;
+  --accent-dim: #0ea5e9;
+  --border: rgba(255,255,255,0.08);
+  --card-bg: rgba(255,255,255,0.03);
+  --text-secondary: #b4bcd0;
+  --text-tertiary: rgba(180,188,208,0.6);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background: #000212;
+  color: #f7f8f8;
+  scroll-behavior: smooth;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(56, 189, 248, 0.2);
+  color: #fff;
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: rgba(56,189,248,0.3); border-radius: 2px; }
+
+/* ── Layout container — reliable cross-Tailwind-version centering ── */
+.wrap {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* ── Responsive section padding ── */
+.section-pad {
+  padding-top: 160px;
+  padding-bottom: 160px;
+}
+@media (max-width: 767px) {
+  .section-pad {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+/* Stats inner card */
+.stats-inner {
+  padding: 64px 48px;
+}
+@media (max-width: 767px) {
+  .stats-inner {
+    padding: 40px 20px;
+  }
+}
+
+/* CTA inner padding */
+.cta-inner {
+  padding: 180px 24px;
+}
+@media (max-width: 767px) {
+  .cta-inner {
+    padding: 100px 20px;
+  }
+}
+
+/* Section divider */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+}
+
+/* Shimmer — now ice-white to sky */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+.shimmer-text {
+  background: linear-gradient(90deg,
+    #fff 0%,
+    #bae6fd 20%,
+    #38bdf8 40%,
+    #bae6fd 60%,
+    #fff 80%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 5s linear infinite;
+}
+
+/* Glow pulse — sky blue */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(56,189,248,0.2); }
+  50%       { box-shadow: 0 0 50px rgba(56,189,248,0.5); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes ping-slow {
+  0%    { transform: scale(1);   opacity: 0.6; }
+  100%  { transform: scale(1.8); opacity: 0;   }
+}
+
+.glow-card  { animation: glow-pulse 3s ease-in-out infinite; }
+.floating   { animation: float 4s ease-in-out infinite; }
+.ping-slow  { animation: ping-slow 2s ease-out infinite; }

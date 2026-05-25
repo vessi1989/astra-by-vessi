@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx --yes puppeteer browsers install chrome)",
+      "Bash(node -e \"const puppeteer = require\\('puppeteer'\\); console.log\\('puppeteer ok', puppeteer.executablePath ? 'has exe' : 'no exe'\\);\")"
+    ]
+  }
+}
