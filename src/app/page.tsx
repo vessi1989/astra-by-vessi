@@ -231,7 +231,7 @@ function ServicesSection() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#f7f8f8] leading-[1.08]" style={{ letterSpacing: '-0.022em' }}>
             AI That Sells While
             <br />
-            <span className="shimmer-text">You Sleep</span>
+            <span className="shimmer-bubble"><span className="shimmer-text">You Sleep</span></span>
           </h2>
           <p className="mt-5 text-[15px] leading-relaxed" style={{ maxWidth: '512px', margin: '20px auto 0', color: '#b4bcd0' }}>
             Every service is designed around one goal: filling your calendar with
@@ -350,7 +350,7 @@ function HowItWorksSection() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#f7f8f8] leading-[1.08]" style={{ letterSpacing: '-0.022em' }}>
             From Zero to Pipeline
             <br />
-            <span className="shimmer-text">in 21 Days</span>
+            <span className="shimmer-bubble"><span className="shimmer-text">in 21 Days</span></span>
           </h2>
           <p className="mt-5 text-[15px]" style={{ maxWidth: '420px', margin: '20px auto 0', color: '#b4bcd0' }}>
             Click any node to explore each phase of your AI-powered growth journey.
@@ -390,7 +390,7 @@ function TestimonialsSection() {
         <FadeIn className="text-center mb-10 md:mb-14">
           <Label>Client Results</Label>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#f7f8f8] leading-[1.08]" style={{ letterSpacing: '-0.022em' }}>
-            <span className="shimmer-text">Real Numbers.</span> Real Growth.
+            <span className="shimmer-bubble"><span className="shimmer-text">Real Numbers.</span></span> Real Growth.
           </h2>
         </FadeIn>
 
@@ -457,7 +457,7 @@ function TechSection() {
           <Label>Powered By</Label>
           <h2 className="text-4xl md:text-5xl font-bold leading-tight" style={{ letterSpacing: '-0.022em' }}>
             <span className="text-[#f7f8f8]">Best-in-Class </span>
-            <span className="shimmer-text">AI Stack</span>
+            <span className="shimmer-bubble"><span className="shimmer-text">AI Stack</span></span>
           </h2>
         </FadeIn>
 
@@ -538,7 +538,7 @@ function PricingSection() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#f7f8f8] leading-[1.08]" style={{ letterSpacing: '-0.022em' }}>
             Plans That Scale
             <br />
-            <span className="shimmer-text">With Your Revenue</span>
+            <span className="shimmer-bubble"><span className="shimmer-text">With Your Revenue</span></span>
           </h2>
         </FadeIn>
 
@@ -633,7 +633,7 @@ function CTASection() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#f7f8f8] leading-[1.08] text-center" style={{ letterSpacing: '-0.022em' }}>
             Your Competitors Are Already
             <br />
-            <span className="shimmer-text">Using AI.</span>
+            <span className="shimmer-bubble"><span className="shimmer-text">Using AI.</span></span>
           </h2>
           <p className="mt-6 text-[16px] leading-relaxed text-center" style={{ maxWidth: '560px', margin: '24px auto 0', color: '#b4bcd0' }}>
             Every day without an AI sales system is pipeline left on the table. Book your
@@ -644,7 +644,7 @@ function CTASection() {
             <div className="relative inline-flex">
               <div className="absolute -inset-[16px] rounded-full bg-sky-500/25 blur-2xl pointer-events-none" />
               <div className="absolute -inset-[6px] rounded-full bg-sky-400/15 blur-md pointer-events-none" />
-              <button onClick={openContact} className="group relative flex items-center gap-2.5 px-10 py-4 rounded-full text-[13px] font-bold text-white uppercase tracking-widest bg-sky-500 hover:bg-sky-400 transition-all duration-200 shadow-[0_0_36px_rgba(56,189,248,0.55)] hover:shadow-[0_0_60px_rgba(56,189,248,0.8)] cursor-pointer">
+              <button onClick={openContact} className="group relative flex items-center gap-3 px-14 py-4 rounded-full text-[13px] font-bold text-white uppercase tracking-widest cursor-pointer transition-all duration-200 shadow-[0_0_36px_rgba(56,189,248,0.55)] hover:shadow-[0_0_60px_rgba(56,189,248,0.8)]" style={{ background: 'linear-gradient(135deg, #38bdf8 0%, #0ea5e9 60%, #0284c7 100%)' }}>
                 Book Your Free AI Audit
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </button>

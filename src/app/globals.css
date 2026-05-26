@@ -120,6 +120,19 @@ html, body {
   animation: shimmer 5s linear infinite;
 }
 
+/* Elegant bubble wrapper around shimmer highlights */
+.shimmer-bubble {
+  display: inline;
+  padding: 0.08em 0.35em;
+  border-radius: 0.35em;
+  background: rgba(56, 189, 248, 0.07);
+  box-shadow:
+    inset 0 0 0 1px rgba(56, 189, 248, 0.13),
+    0 0 28px rgba(56, 189, 248, 0.10);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
 /* Glow pulse — sky blue */
 @keyframes glow-pulse {
   0%, 100% { box-shadow: 0 0 20px rgba(56,189,248,0.2); }
