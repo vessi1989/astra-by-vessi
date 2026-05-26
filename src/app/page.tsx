@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { WovenLightHero }   from "@/components/ui/woven-light-hero";
 import { ShinyButton }       from "@/components/ui/shiny-button";
+import { CtaButton }         from "@/components/ui/cta-button";
 import ShaderBackground      from "@/components/ui/shader-background";
 import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
 
@@ -598,16 +599,20 @@ function PricingSection() {
                 </ul>
 
                 {/* CTA */}
-                <button
-                  onClick={openContact}
-                  className={`w-full py-3 rounded-xl text-[13px] font-semibold tracking-wide transition-all duration-200 cursor-pointer ${
-                    plan.highlight
-                      ? "bg-sky-500 hover:bg-sky-400 text-white shadow-[0_0_20px_rgba(56,189,248,0.3)] hover:shadow-[0_0_32px_rgba(56,189,248,0.5)]"
-                      : "border border-white/[0.08] text-white/40 hover:text-white/70 hover:border-white/15"
-                  }`}
-                >
-                  {plan.price === "Custom" ? "Contact Sales" : "Get Started"}
-                </button>
+                {plan.highlight ? (
+                  <CtaButton
+                    label="Get Started"
+                    onClick={openContact}
+                    className="w-full"
+                  />
+                ) : (
+                  <button
+                    onClick={openContact}
+                    className="w-full py-3 rounded-xl text-[13px] font-semibold tracking-wide transition-all duration-200 cursor-pointer border border-white/[0.08] text-white/40 hover:text-white/70 hover:border-white/15"
+                  >
+                    {plan.price === "Custom" ? "Contact Sales" : "Get Started"}
+                  </button>
+                )}
               </div>
             </FadeIn>
           ))}
@@ -641,13 +646,13 @@ function CTASection() {
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <div className="relative inline-flex">
-              <div className="absolute -inset-[16px] rounded-full bg-sky-500/25 blur-2xl pointer-events-none" />
-              <div className="absolute -inset-[6px] rounded-full bg-sky-400/15 blur-md pointer-events-none" />
-              <button onClick={openContact} className="group relative flex items-center gap-3 px-14 py-4 rounded-full text-[13px] font-bold text-white uppercase tracking-widest cursor-pointer transition-all duration-200 shadow-[0_0_36px_rgba(56,189,248,0.55)] hover:shadow-[0_0_60px_rgba(56,189,248,0.8)]" style={{ background: 'linear-gradient(135deg, #38bdf8 0%, #0ea5e9 60%, #0284c7 100%)' }}>
-                Book Your Free AI Audit
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-              </button>
+            <div className="relative">
+              <div className="absolute -inset-[20px] rounded-full bg-sky-500/20 blur-2xl pointer-events-none" />
+              <CtaButton
+                label="Book Your Free AI Audit"
+                icon={<ArrowRight className="w-4 h-4" />}
+                onClick={openContact}
+              />
             </div>
             <button onClick={() => document.querySelector("#results")?.scrollIntoView({ behavior: "smooth" })} className="px-8 py-4 rounded-full text-[13px] font-semibold text-white/40 uppercase tracking-widest border border-white/[0.08] hover:border-white/20 hover:text-[#b4bcd0] transition-all duration-200 cursor-pointer">
               See Case Studies

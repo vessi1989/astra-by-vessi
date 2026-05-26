@@ -3,6 +3,7 @@
 import React, { useRef, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import * as THREE from "three";
+import { CtaButton } from "@/components/ui/cta-button";
 
 export const WovenLightHero = () => {
   const textControls = useAnimation();
@@ -100,15 +101,11 @@ export const WovenLightHero = () => {
         >
           {/* Primary CTA — extended glow halo */}
           <div className="relative inline-flex">
-            <div className="absolute -inset-[14px] rounded-full bg-sky-500/25 blur-2xl pointer-events-none" />
-            <div className="absolute -inset-[6px] rounded-full bg-sky-400/15 blur-md pointer-events-none" />
-            <button
+            <div className="absolute -inset-[20px] rounded-full bg-sky-500/20 blur-2xl pointer-events-none" />
+            <CtaButton
+              label="Book a Strategy Call"
               onClick={() => window.open("https://www.instagram.com/vessi_mi/", "_blank")}
-              className="relative px-14 py-4 rounded-full text-[14px] font-bold text-white uppercase tracking-widest cursor-pointer transition-all duration-200 shadow-[0_0_40px_rgba(56,189,248,0.65)] hover:shadow-[0_0_60px_rgba(56,189,248,0.9)]"
-              style={{ background: 'linear-gradient(135deg, #38bdf8 0%, #0ea5e9 60%, #0284c7 100%)' }}
-            >
-              Book a Strategy Call
-            </button>
+            />
           </div>
           <button
             onClick={() => document.querySelector("#how-it-works")?.scrollIntoView({ behavior: "smooth" })}
